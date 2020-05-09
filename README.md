@@ -1,7 +1,9 @@
 # TextGCN
 
-Baseline model in PyTorch.
-It contains only R8 dataset. 
+Baseline model in PyTorch. We only upload R8 dataset. 
+## Q&A on TextGCN for better understanding
+1. Are the dimensions of word and document node are same? 
+   -> Yes 
 
 # StochasticModel
 
