@@ -23,6 +23,7 @@ if dataset == 'yelp' :
     review = pd.DataFrame([json.loads(line) for line in open('../data/corpus/review.json', 'r', errors='ignore')])
     data = pd.merge(review, business)[['text', 'categories']]
     data['categories'] = data['categories'].str.split(',')
+    data['text'] = data.text.apply(lambda x : x.replace('\n',''))
     
     text = data['text'].values
     np.savetxt('../data/corpus/yelp.txt', text, delimiter=" ", fmt="%s")
@@ -46,4 +47,4 @@ if dataset == 'yelp' :
     label_txt = pd.concat([train, test], axis=0).reset_index().reset_index()
     label_txt = label_txt[['level_0','set','label']]
 
-    np.savetxt('../data/yelp.txt', label_txt, delimiter=" ", fmt="%s")  
+    np.savetxt('../data/yelp.txt', label_txt, delimiter="\t", fmt="%s")  
