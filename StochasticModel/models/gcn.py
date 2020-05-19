@@ -35,7 +35,7 @@ class GraphConvolution(nn.Module):
             if i == 0:
                 out = self.support[i].mm(pre_sup)                
             else:
-                out += self.support[i].mm(pre_sup) # 거의 사용을 안하네??? 
+                out += self.support[i].mm(pre_sup) 
 
         if self.act_func is not None:
             out = self.act_func(out)
