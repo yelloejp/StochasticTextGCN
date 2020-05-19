@@ -11,3 +11,7 @@
 
 ### Step 3) Build words and docs graph.
 #### Run `python build_graph.py <dataset>`
+
+### Step 4) Train the model. 
+#### `cd ..`
+#### Run `python train.py <dataset>`
